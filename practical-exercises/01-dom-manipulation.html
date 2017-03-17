@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>DOM Manipulation</title>
+	<style>
+		.red {
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<textarea name="storyBox" id="storyBox" cols="30" rows="10" maxlength="100"></textarea>
+	<div>
+		<label for="storyBox" class='storyBox-label'>Remaining Chars: <span class='storyBox-charCount'>100</span></label>
+	</div>
+</body>
+<script>
+	const storyBox 			= document.getElementById('storyBox')
+	const charCount 		= document.querySelectorAll('.storyBox-charCount')[0]
+	const storyBoxLabel = document.querySelectorAll('.storyBox-label')[0]
+
+	// Event listener set on the textarea for keyup events
+	storyBox.addEventListener('keyup', function() {
+		// Current textarea content length
+		let textAreaLength = this.value.length
+		let remainingChars = 100 - textAreaLength
+
+		// Checks to see if the remaining characters 5 or less
+		// if it is, then add in the class red to the label
+		// if it isn't remove the class red from the label
+		if (remainingChars <= 5) {
+			storyBoxLabel.classList.add('red')
+		} else {
+			storyBoxLabel.classList.remove('red')
+		}
+
+		// Updates the character count with remaining characters
+		charCount.innerText = remainingChars
+	})
+</script>
+</html>
