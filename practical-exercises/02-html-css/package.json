@@ -1,9 +1,9 @@
 {
   "name": "02-html-css",
   "version": "1.0.0",
-  "main": "index.html",
+  "main": "02-html-css.html",
   "author": "Michael Lee",
-  "dependencies": {
+  "devDependencies": {
     "bootstrap": "^3.3.7"
   }
 }
