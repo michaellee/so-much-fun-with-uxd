@@ -29,3 +29,47 @@ Another method is duplication of data into a static form. Let's say an applicati
 If the back-end service and database is inaccessible the static system can replace the system to provide a read-only solution until the back-end service and database are brought back online.
 
 # Section 2 - Development & Deployment
+
+Q1. If I'm being completely honest, I don't write any automated tests. I know there should be automated tests written in a test driven development method, but all the projects I've worked on the speed in which execution of features and functions had to be completed trumped writing tests.
+
+Obviously this has led to some regressions. Testing would also provide some confidence that certain user paths are functional and work the way that it needs to.
+
+In the past when I did write tests, I couldn't wrap my head around how to provide integrations tests to a program which most features were behind a firewall. I suppose a test account could've been created but then additional steps would have to be added for the setup and tear down of data.
+
+Would love to learn how the UXD team does testing. I feel this is an area which I can learn a lot.
+
+Q2. I've worked a lot on remote teams and so this is a problem that is pretty dear to my heart. Obviously autonomy and communication are key. The first step would be to take a concrete amount of time to see if I can understand the issue and try to unblock myself. I usually set myself a 30 minute window to see if I can make any progress.
+
+If I don't see any results within that 30 mins. I usually do a `git blame` to see who was the majority author of the code I'm trying to work with. I'll shoot them an email or if there is a task-management system in place such as Trello or JIRA, I'll try leaving them a comment. If asynchronous communication is ineffective and if the urgency of the feature is high then I'll also send a ping on instant message if it is available.
+
+If there is a general development channel in say instant messaging program, then I'll bring it up there to see if the group can help in unblocking me.
+
+This is because I believe that communication is key but also respecting a person's space to concentrate and attend to my problem when they are available. I don't want to spam them on instant message if they are deep in their work.
+
+Once I've exhausted my avenues of connecting with the members to help getting me unblocked, I'll refocus my energy on something else until I have another cycle to revisit the issue.
+
+Q3. In a codebase with multiple authors, I value an adopted style, legibility and comments.
+
+An adopted styling for the language is important because it helps keep the code base consistent. Each author writes in a style that is adhered by the team and so it isn't all over the place. For example with JavaScript, there is the [standard style](https://github.com/feross/standard) which is adopted by many organizations.
+
+Legibility because I should be able to read a variable name or function and get a basic understanding of what it does immediately. For example if I'm looking at a function, feel free to give it a description name so that I know what it does. Same with the parameter, don't just pass in an ambiguous name, but be descriptive.
+
+```
+// What does this do? I think this takes a number as its parameter
+let i = (n) => {
+  return n + 1
+}
+```
+
+```
+// Much better, even without a description of the function, I'm able to get
+// a fairly good idea of what the function does and what it expects as a
+// paramter
+let increaseCounter = (counter) => {
+  return counter + 1
+}
+```
+
+Comments are important because sometimes I write code and I don't know what the heck it is doing. The unfortunate thing about code is that there are bugs. And when you have to hunt down bugs, the quicker you can understand what the code is doing and follow it the quicker you can mitigate the bug.
+
+Especially in MVVMs where you're dealing with view files and their respective view-model files.
