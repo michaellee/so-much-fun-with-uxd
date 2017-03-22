@@ -1,8 +1,8 @@
 'use strict'
 
 function remoteMathService (cb) {
-	var  one
- 	var  two
+	var one
+ 	var two
 	callOneService(function (err, num1) {
 		callTwoService(function (err, num2) {
 			one = num1
@@ -32,4 +32,4 @@ remoteMathService(function (err, answer) {
 	} else {
 		console.log ("correct")
 	}
-});
+})
